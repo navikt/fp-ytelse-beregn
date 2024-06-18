@@ -104,7 +104,7 @@ class FinnBrukersFeriepengePeriode extends LeafSpecification<BeregningsresultatF
             .min(Comparator.naturalOrder());
     }
 
-    static private boolean finnesAndelMedKravPåFeriepengerOgUtbetaling(List<BeregningsresultatAndel> andeler) {
+    private static boolean finnesAndelMedKravPåFeriepengerOgUtbetaling(List<BeregningsresultatAndel> andeler) {
         return andeler.stream()
             .filter(andel -> andel.getInntektskategori().erArbeidstakerEllerSjømann())
             .anyMatch(andel -> andel.getDagsats() > 0);

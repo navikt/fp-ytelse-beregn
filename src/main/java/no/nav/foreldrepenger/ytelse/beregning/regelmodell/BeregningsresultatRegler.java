@@ -3,7 +3,6 @@ package no.nav.foreldrepenger.ytelse.beregning.regelmodell;
 import no.nav.foreldrepenger.ytelse.beregning.regelmodell.fastsett.RegelFastsettBeregningsresultat;
 import no.nav.foreldrepenger.ytelse.beregning.regelmodell.feriepenger.BeregningsresultatFeriepengerRegelModell;
 import no.nav.foreldrepenger.ytelse.beregning.regelmodell.feriepenger.RegelBeregnFeriepenger;
-import no.nav.foreldrepenger.ytelse.beregning.regelmodell.regelmodell.BeregningsresultatVersjon;
 import no.nav.fpsak.nare.evaluation.summary.EvaluationSerializer;
 import no.nav.fpsak.nare.evaluation.summary.NareVersion;
 import no.nav.fpsak.nare.json.JsonOutput;

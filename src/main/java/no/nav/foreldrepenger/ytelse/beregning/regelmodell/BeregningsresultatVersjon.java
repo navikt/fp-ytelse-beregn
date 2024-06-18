@@ -1,4 +1,4 @@
-package no.nav.foreldrepenger.ytelse.beregning.regelmodell.regelmodell;
+package no.nav.foreldrepenger.ytelse.beregning.regelmodell;
 
 import no.nav.fpsak.nare.evaluation.summary.EvaluationVersion;
 import no.nav.fpsak.nare.evaluation.summary.NareVersion;

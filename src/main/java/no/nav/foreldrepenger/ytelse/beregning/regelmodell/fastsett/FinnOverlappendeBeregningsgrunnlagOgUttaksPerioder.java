@@ -14,7 +14,6 @@ import no.nav.foreldrepenger.ytelse.beregning.regelmodell.beregningsgrunnlag.Ber
 import no.nav.foreldrepenger.ytelse.beregning.regelmodell.beregningsgrunnlag.BeregningsgrunnlagPeriode;
 import no.nav.foreldrepenger.ytelse.beregning.regelmodell.beregningsgrunnlag.BeregningsgrunnlagPrArbeidsforhold;
 import no.nav.foreldrepenger.ytelse.beregning.regelmodell.beregningsgrunnlag.BeregningsgrunnlagPrStatus;
-import no.nav.foreldrepenger.ytelse.beregning.regelmodell.regelmodell.fastsett.BeregningsgrunnlagUttakArbeidsforholdMatcher;
 import no.nav.foreldrepenger.ytelse.beregning.regelmodell.uttakresultat.UttakAktivitet;
 import no.nav.foreldrepenger.ytelse.beregning.regelmodell.uttakresultat.UttakResultat;
 import no.nav.foreldrepenger.ytelse.beregning.regelmodell.uttakresultat.UttakResultatPeriode;
@@ -32,6 +31,7 @@ class FinnOverlappendeBeregningsgrunnlagOgUttaksPerioder extends LeafSpecificati
     private static final String DAGSATS_BRUKER = ".dagsatsBruker";
     private static final String DAGSATS_ARBEIDSGIVER = ".dagsatsArbeidsgiver";
     private static final String ARBEIDSGIVER_ID = ".arbeidsgiverId";
+    private static final String UTBETALINGSGRAD = ".utbetalingsgrad";
 
     private static final BigDecimal FULL_STILLING = BigDecimal.valueOf(100);
 
@@ -198,7 +198,7 @@ class FinnOverlappendeBeregningsgrunnlagOgUttaksPerioder extends LeafSpecificati
     private static DagsatsBrukerAG kalkulerDagsatserForGradering(BigDecimal redusertBrukersAndelPrÅr, BigDecimal redusertRefusjonPrÅr,
                                                                    UttakAktivitet uttakAktivitet, Map<String, Object> resultater, String periodenavn) {
         if (uttakAktivitet.utbetalingsgrad().compareTo(BigDecimal.ZERO) == 0) {
-            resultater.put(periodenavn + ".utbetalingsgrad", uttakAktivitet.utbetalingsgrad());
+            resultater.put(periodenavn + UTBETALINGSGRAD, uttakAktivitet.utbetalingsgrad());
             return new DagsatsBrukerAG(0L, 0L);
         }
 
@@ -219,7 +219,7 @@ class FinnOverlappendeBeregningsgrunnlagOgUttaksPerioder extends LeafSpecificati
             var dagsatsBruker = årsbeløpTilDagsats(utbetalingBruker);
 
             // Regelsporing
-            resultater.put(periodenavn + ".utbetalingsgrad", uttakAktivitet.utbetalingsgrad());
+            resultater.put(periodenavn + UTBETALINGSGRAD, uttakAktivitet.utbetalingsgrad());
             resultater.put(periodenavn + ".stillingsprosent", uttakAktivitet.stillingsgrad());
 
             return new DagsatsBrukerAG(dagsatsBruker, dagsatsArbeidsgiver);
@@ -228,7 +228,7 @@ class FinnOverlappendeBeregningsgrunnlagOgUttaksPerioder extends LeafSpecificati
         var dagsatsBruker = årsbeløpTilDagsats(redusertAndelBruker);
 
         // Regelsporing
-        resultater.put(periodenavn + ".utbetalingsgrad", uttakAktivitet.utbetalingsgrad());
+        resultater.put(periodenavn + UTBETALINGSGRAD, uttakAktivitet.utbetalingsgrad());
         resultater.put(periodenavn + ".stillingsprosent", uttakAktivitet.stillingsgrad());
 
         return new DagsatsBrukerAG(dagsatsBruker, dagsatsArbeidsgiver);

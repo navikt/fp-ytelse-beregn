@@ -9,7 +9,7 @@ import no.nav.foreldrepenger.ytelse.beregning.regelmodell.beregningsgrunnlag.Inn
 
 public class BeregningsresultatAndel {
 
-    private Boolean brukerErMottaker;
+    private boolean brukerErMottaker;
     private Arbeidsforhold arbeidsforhold;
     private Long dagsats;
     private BigDecimal stillingsprosent = BigDecimal.valueOf(100);
@@ -22,7 +22,7 @@ public class BeregningsresultatAndel {
     }
 
 
-    public Boolean erBrukerMottaker() {
+    public boolean erBrukerMottaker() {
         return brukerErMottaker;
     }
 
@@ -79,7 +79,7 @@ public class BeregningsresultatAndel {
             beregningsresultatAndelMal = new BeregningsresultatAndel();
         }
 
-        public Builder medBrukerErMottaker(Boolean brukerErMottaker) {
+        public Builder medBrukerErMottaker(boolean brukerErMottaker) {
             beregningsresultatAndelMal.brukerErMottaker = brukerErMottaker;
             return this;
         }

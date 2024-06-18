@@ -11,7 +11,7 @@ public class BeregningsresultatFeriepengerPrÅr {
 
     private LocalDate opptjeningÅr;
     private BigDecimal årsbeløp;
-    private Boolean brukerErMottaker;
+    private boolean brukerErMottaker;
     private Arbeidsforhold arbeidsforhold;
     private AktivitetStatus aktivitetStatus;
 
@@ -26,7 +26,7 @@ public class BeregningsresultatFeriepengerPrÅr {
         return årsbeløp;
     }
 
-    public Boolean erBrukerMottaker() {
+    public boolean erBrukerMottaker() {
         return brukerErMottaker;
     }
 

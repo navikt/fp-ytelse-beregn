@@ -124,7 +124,7 @@ class FinnOverlappendeBeregningsgrunnlagOgUttaksPerioderTest {
         assertThat(andel.get(0).getDagsats()).isEqualTo(faktiskDagsatBruker);
         assertThat(andel.get(0).getDagsatsFraBg()).isEqualTo(dagsatsBruker);
         assertThat(andel.get(1).erBrukerMottaker()).isFalse();
-        assertThat(andel.get(1).getDagsats()).isEqualTo(0L);
+        assertThat(andel.get(1).getDagsats()).isZero();
         assertThat(andel.get(1).getDagsatsFraBg()).isEqualTo(dagsatsArbeidsgiver);
     }
 
@@ -155,7 +155,7 @@ class FinnOverlappendeBeregningsgrunnlagOgUttaksPerioderTest {
         assertThat(andel.get(0).getDagsats()).isEqualTo(faktiskDagsatBruker);
         assertThat(andel.get(0).getDagsatsFraBg()).isEqualTo(dagsatsBruker);
         assertThat(andel.get(1).erBrukerMottaker()).isFalse();
-        assertThat(andel.get(1).getDagsats()).isEqualTo(0L);
+        assertThat(andel.get(1).getDagsats()).isZero();
         assertThat(andel.get(1).getDagsatsFraBg()).isEqualTo(dagsatsArbeidsgiver);
     }
 
@@ -186,7 +186,7 @@ class FinnOverlappendeBeregningsgrunnlagOgUttaksPerioderTest {
         assertThat(andel.get(0).getDagsats()).isEqualTo(faktiskDagsatBruker);
         assertThat(andel.get(0).getDagsatsFraBg()).isEqualTo(dagsatsBruker);
         assertThat(andel.get(1).erBrukerMottaker()).isFalse();
-        assertThat(andel.get(1).getDagsats()).isEqualTo(0L);
+        assertThat(andel.get(1).getDagsats()).isZero();
         assertThat(andel.get(1).getDagsatsFraBg()).isEqualTo(dagsatsArbeidsgiver);
     }
 
@@ -217,7 +217,7 @@ class FinnOverlappendeBeregningsgrunnlagOgUttaksPerioderTest {
         assertThat(andel.get(0).getDagsats()).isEqualTo(faktiskDagsatBruker);
         assertThat(andel.get(0).getDagsatsFraBg()).isEqualTo(dagsatsBruker);
         assertThat(andel.get(1).erBrukerMottaker()).isFalse();
-        assertThat(andel.get(1).getDagsats()).isEqualTo(0L);
+        assertThat(andel.get(1).getDagsats()).isZero();
         assertThat(andel.get(1).getDagsatsFraBg()).isEqualTo(dagsatsArbeidsgiver);
     }
 
@@ -245,7 +245,7 @@ class FinnOverlappendeBeregningsgrunnlagOgUttaksPerioderTest {
         var andel = mellomregning.getOutput().getBeregningsresultatPerioder().get(0).getBeregningsresultatAndelList();
         assertThat(andel).hasSize(2);
         assertThat(andel.get(0).erBrukerMottaker()).isTrue();
-        assertThat(andel.get(0).getDagsats()).isEqualTo(0L);
+        assertThat(andel.get(0).getDagsats()).isZero();
         assertThat(andel.get(0).getDagsatsFraBg()).isEqualTo(dagsatsBruker);
         assertThat(andel.get(1).erBrukerMottaker()).isFalse();
         assertThat(andel.get(1).getDagsats()).isEqualTo(faktiskDagsatArbeidsgiver);

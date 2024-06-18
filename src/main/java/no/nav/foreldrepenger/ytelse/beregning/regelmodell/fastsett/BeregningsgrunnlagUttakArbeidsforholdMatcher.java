@@ -1,4 +1,4 @@
-package no.nav.foreldrepenger.ytelse.beregning.regelmodell.regelmodell.fastsett;
+package no.nav.foreldrepenger.ytelse.beregning.regelmodell.fastsett;
 
 import java.util.Objects;
 import java.util.UUID;

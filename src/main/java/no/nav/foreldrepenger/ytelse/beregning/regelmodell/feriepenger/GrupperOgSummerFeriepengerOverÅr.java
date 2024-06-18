@@ -59,7 +59,7 @@ class GrupperOgSummerFeriepengerOverÅr extends LeafSpecification<Beregningsresu
         return årsbeløp != 0L;
     }
 
-    private record FeriepengerGruppering(LocalDate opptjeningÅr, AktivitetStatus aktivitetStatus, Boolean brukerErMottaker, Arbeidsforhold arbeidsforhold) {
+    private record FeriepengerGruppering(LocalDate opptjeningÅr, AktivitetStatus aktivitetStatus, boolean brukerErMottaker, Arbeidsforhold arbeidsforhold) {
 
         static FeriepengerGruppering fraBeregningRegel(BeregningsresultatFeriepengerPrÅr andel) {
             return new FeriepengerGruppering(andel.getOpptjeningÅr(), andel.getAktivitetStatus(),
