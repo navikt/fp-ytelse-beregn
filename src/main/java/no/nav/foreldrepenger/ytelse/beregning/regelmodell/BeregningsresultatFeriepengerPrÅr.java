@@ -95,7 +95,6 @@ public class BeregningsresultatFeriepengerPrÅr {
         private void verifyStateForBuild() {
             Objects.requireNonNull(kladd.opptjeningÅr, "opptjeningÅr");
             Objects.requireNonNull(kladd.årsbeløp, "årsbeløp");
-            Objects.requireNonNull(kladd.brukerErMottaker, "brukerErMottaker");
             Objects.requireNonNull(kladd.aktivitetStatus, "aktivitetStatus");
         }
     }
