@@ -15,6 +15,7 @@ import org.junit.jupiter.api.Test;
 import no.nav.foreldrepenger.ytelse.beregning.regelmodell.BeregningsresultatAndel;
 import no.nav.foreldrepenger.ytelse.beregning.regelmodell.BeregningsresultatGrunnlag;
 import no.nav.foreldrepenger.ytelse.beregning.regelmodell.BeregningsresultatRegler;
+import no.nav.foreldrepenger.ytelse.beregning.regelmodell.BeregningsresultatVersjon;
 import no.nav.foreldrepenger.ytelse.beregning.regelmodell.beregningsgrunnlag.AktivitetStatus;
 import no.nav.foreldrepenger.ytelse.beregning.regelmodell.beregningsgrunnlag.Arbeidsforhold;
 import no.nav.foreldrepenger.ytelse.beregning.regelmodell.beregningsgrunnlag.Beregningsgrunnlag;
@@ -52,6 +53,9 @@ class RegelFastsettBeregningsresultatFPTest {
         var resultat = BeregningsresultatRegler.fastsettBeregningsresultat(modell);
 
         // Assert
+        assertThat(resultat.versjon()).isEqualTo(BeregningsresultatVersjon.BEREGNINGSRESULTAT_VERSJON.version());
+        assertThat(resultat.versjon()).isNotEqualTo("UNKNOWN");
+
         var perioder = resultat.beregningsresultat().getBeregningsresultatPerioder();
         assertThat(perioder).hasSize(1);
         var periode = perioder.get(0);

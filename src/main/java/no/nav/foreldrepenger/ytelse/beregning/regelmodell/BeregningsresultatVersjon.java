@@ -8,7 +8,7 @@ public class BeregningsresultatVersjon {
     private BeregningsresultatVersjon() {
     }
 
-    public static final EvaluationVersion BEREGNINGSRESULTAT_VERSJON = NareVersion.readVersionPropertyFor("beregningsresultat", "nare/fp-ytelse-beregn-version.properties");
+    public static final EvaluationVersion BEREGNINGSRESULTAT_VERSJON = NareVersion.readVersionPropertyFor("fp-ytelse-beregn", "nare/fp-ytelse-beregn-version.properties");
 
 
 }
