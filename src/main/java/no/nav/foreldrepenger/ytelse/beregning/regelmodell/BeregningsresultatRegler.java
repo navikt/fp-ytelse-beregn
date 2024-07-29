@@ -18,7 +18,7 @@ public final class BeregningsresultatRegler {
         var outputContainer = Beregningsresultat.opprett();
         var evaluation = new RegelFastsettBeregningsresultat().evaluer(grunnlag, outputContainer);
         var sporing = EvaluationSerializer.asJson(evaluation, NareVersion.NARE_VERSION, BeregningsresultatVersjon.BEREGNINGSRESULTAT_VERSJON);
-        var versjon = BeregningsresultatVersjon.BEREGNINGSRESULTAT_VERSJON.version();
+        var versjon = BeregningsresultatVersjon.BEREGNINGSRESULTAT_VERSJON.nameAndVersion();
 
         // Map tilbake til domenemodell fra regelmodell
         return new FastsattBeregningsresultat(outputContainer, grunnlag, toJson(grunnlag), sporing, versjon);
@@ -31,7 +31,7 @@ public final class BeregningsresultatRegler {
 
         var evaluation = new RegelBeregnFeriepenger().evaluer(mellomregning);
         var sporing = EvaluationSerializer.asJson(evaluation, NareVersion.NARE_VERSION, BeregningsresultatVersjon.BEREGNINGSRESULTAT_VERSJON);
-        var versjon = BeregningsresultatVersjon.BEREGNINGSRESULTAT_VERSJON.version();
+        var versjon = BeregningsresultatVersjon.BEREGNINGSRESULTAT_VERSJON.nameAndVersion();
 
         var resultat = new BeregningsresultatFeriepengerResultat(mellomregning.getBeregningsresultatFeriepengerPrÅrListe(), mellomregning.getFeriepengerPeriode());
 
