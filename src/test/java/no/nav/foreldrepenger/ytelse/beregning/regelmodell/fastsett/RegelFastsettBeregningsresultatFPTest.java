@@ -53,7 +53,7 @@ class RegelFastsettBeregningsresultatFPTest {
         var resultat = BeregningsresultatRegler.fastsettBeregningsresultat(modell);
 
         // Assert
-        assertThat(resultat.versjon()).isEqualTo(BeregningsresultatVersjon.BEREGNINGSRESULTAT_VERSJON.version());
+        assertThat(resultat.versjon()).isEqualTo(BeregningsresultatVersjon.BEREGNINGSRESULTAT_VERSJON.nameAndVersion());
         assertThat(resultat.versjon()).isNotEqualTo("UNKNOWN");
 
         var perioder = resultat.beregningsresultat().getBeregningsresultatPerioder();
