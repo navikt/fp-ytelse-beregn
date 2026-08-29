@@ -57,7 +57,7 @@ class FinnOverlappendeBeregningsgrunnlagOgUttaksPerioder extends LeafSpecificati
         var uttakTimeline = uttakResultat.getUttakPeriodeTimeline();
         var resultatTimeline = intersectTimelines(grunnlagTimeline, uttakTimeline, resultater)
             .compress();
-        return resultatTimeline.toSegments().stream().map(LocalDateSegment::getValue).toList();
+        return resultatTimeline.segmenter().stream().map(LocalDateSegment::getValue).toList();
     }
 
     private LocalDateTimeline<BeregningsresultatPeriode> intersectTimelines(LocalDateTimeline<BeregningsgrunnlagPeriode> grunnlagTimeline, LocalDateTimeline<UttakResultatPeriode> uttakTimeline, Map<String, Object> resultater) {
